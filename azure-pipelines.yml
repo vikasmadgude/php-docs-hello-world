@@ -22,5 +22,9 @@ steps:
     php -version
   displayName: 'Use PHP version $(phpVersion)'
 
-- script: composer install --no-interaction --prefer-dist
-  displayName: 'composer install'
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Harbinger-Azure'
+    appType: 'PHPWebApp'
+    appName: 'php-ibp'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
