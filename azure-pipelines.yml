@@ -27,4 +27,3 @@ steps:
     azureSubscription: 'Harbinger-Azure'
     appType: 'PHPWebApp'
     appName: 'php-ibp'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
