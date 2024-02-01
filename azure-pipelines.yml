@@ -8,13 +8,16 @@ trigger:
 
 variables:
   # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: Harbinger-Azure
+  azureSubscription: 'Harbinger-Azure'
 
   # Web app name
-  webAppName: php-ibp
+  webAppName: 'php-ibp'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
+
+  # Environment name
+  environmentName: 'Harbinger-AzureDevOps'
 
   # Root folder under which your composer.json file is available.
   rootFolder: $(System.DefaultWorkingDirectory)
@@ -64,6 +67,7 @@ stages:
   - deployment: DeploymentJob
     pool:
       vmImage: $(vmImageName)
+    environment: $(environmentName)
     strategy:
       runOnce:
         deploy:
