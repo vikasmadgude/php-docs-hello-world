@@ -16,9 +16,6 @@ variables:
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
-  # Environment name
-  environmentName: php-ibp
-
   # Root folder under which your composer.json file is available.
   rootFolder: $(System.DefaultWorkingDirectory)
 
