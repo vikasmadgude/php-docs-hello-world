@@ -4,20 +4,20 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/php
 
 trigger:
-- {{ branch }}
+- master
 
 variables:
   # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: '{{ azureRmServiceConnection.Id }}'
+  azureSubscription: Harbinger-Azure
 
   # Web app name
-  webAppName: '{{ webAppName }}'
+  webAppName: php-ibp
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
   # Environment name
-  environmentName: '{{ webAppName }}'
+  environmentName: php-ibp
 
   # Root folder under which your composer.json file is available.
   rootFolder: $(System.DefaultWorkingDirectory)
